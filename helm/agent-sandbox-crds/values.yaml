@@ -1,12 +1,4 @@
-# This file is a Helm values file for the agent-sandbox-crds chart.
-#
-# To learn more about how to configure your app on your cluster
-# and override the default values in here, visit:
-#
-#   https://docs.giantswarm.io/tutorials/fleet-management/app-platform/app-configuration/#basic-values-merging-example
-#
-image:
-  name: "giantswarm/agent-sandbox-crds"
-  tag: ""
-registry:
-  domain: gsoci.azurecr.io
+# The agent-sandbox-crds chart ships only CustomResourceDefinitions and has no
+# configurable values. The CRDs are rendered as templates (so they upgrade with
+# the release) and are marked `helm.sh/resource-policy: keep` so they — and the
+# CRs that depend on them — survive `helm uninstall`.

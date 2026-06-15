@@ -1,34 +1,42 @@
-{{/* vim: set filetype=mustache: */}}
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "name" -}}
-{{- .Chart.Name | trunc 63 | trimSuffix "-" -}}
-{{- end -}}
+{{- define "agent-sandbox.name" -}}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
+{{- end }}
 
 {{/*
-Create chart name and version as used by the chart label.
+The namespace to deploy into.
 */}}
-{{- define "chart" -}}
-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
-{{- end -}}
+{{- define "agent-sandbox.namespace" -}}
+{{- default .Release.Namespace .Values.namespace.name }}
+{{- end }}
 
 {{/*
-Common labels
+Common labels.
 */}}
-{{- define "labels.common" -}}
-app: {{ include "name" . | quote }}
-{{ include "labels.selector" . }}
-app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-application.giantswarm.io/team: {{ index .Chart.Annotations "io.giantswarm.application.team" | quote }}
-helm.sh/chart: {{ include "chart" . | quote }}
-{{- end -}}
+{{- define "agent-sandbox.labels" -}}
+helm.sh/chart: {{ printf "%s-%s" .Chart.Name .Chart.Version | quote }}
+app.kubernetes.io/name: {{ include "agent-sandbox.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- if .Values.image.tag }}
+app.kubernetes.io/version: {{ .Values.image.tag | quote }}
+{{- end }}
+{{- end }}
 
 {{/*
-Selector labels
+Selector labels used by Deployment and Service.
 */}}
-{{- define "labels.selector" -}}
-app.kubernetes.io/name: {{ include "name" . | quote }}
-app.kubernetes.io/instance: {{ .Release.Name | quote }}
-{{- end -}}
+{{- define "agent-sandbox.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "agent-sandbox.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+The controller image reference.
+*/}}
+{{- define "agent-sandbox.image" -}}
+{{- $tag := required "image.tag is required" .Values.image.tag }}
+{{- printf "%s:%s" .Values.image.repository $tag }}
+{{- end }}

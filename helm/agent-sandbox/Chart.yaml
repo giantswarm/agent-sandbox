@@ -3,8 +3,8 @@
 
 apiVersion: v2
 
-# Version of the packaged app
-appVersion: 0.0.1
+# Version of the packaged app (upstream agent-sandbox controller release).
+appVersion: 0.4.6
 
 # Make sure your name DOES NOT end in "app" or "-app".
 name: agent-sandbox

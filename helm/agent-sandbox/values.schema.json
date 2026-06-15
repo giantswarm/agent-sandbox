@@ -2,24 +2,68 @@
     "$schema": "http://json-schema.org/schema#",
     "type": "object",
     "properties": {
-        "image": {
+        "namespace": {
             "type": "object",
             "properties": {
-                "name": {
-                    "type": "string"
+                "create": {
+                    "type": "boolean"
                 },
-                "tag": {
+                "name": {
                     "type": "string"
                 }
             }
         },
-        "registry": {
+        "image": {
             "type": "object",
             "properties": {
-                "domain": {
+                "repository": {
+                    "type": "string"
+                },
+                "tag": {
+                    "type": "string"
+                },
+                "pullPolicy": {
                     "type": "string"
                 }
             }
+        },
+        "replicaCount": {
+            "type": "integer"
+        },
+        "podAnnotations": {
+            "type": "object"
+        },
+        "controller": {
+            "type": "object",
+            "properties": {
+                "leaderElect": {
+                    "type": "boolean"
+                },
+                "extensions": {
+                    "type": "boolean"
+                },
+                "extraArgs": {
+                    "type": "array"
+                }
+            }
+        },
+        "resources": {
+            "type": "object"
+        },
+        "podSecurityContext": {
+            "type": ["object", "null"]
+        },
+        "containerSecurityContext": {
+            "type": ["object", "null"]
+        },
+        "nodeSelector": {
+            "type": "object"
+        },
+        "tolerations": {
+            "type": "array"
+        },
+        "affinity": {
+            "type": "object"
         }
     }
 }

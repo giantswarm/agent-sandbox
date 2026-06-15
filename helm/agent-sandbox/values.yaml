@@ -1,12 +1,69 @@
-# This file is a Helm values file for the agent-sandbox chart.
-#
-# To learn more about how to configure your app on your cluster
-# and override the default values in here, visit:
-#
-#   https://docs.giantswarm.io/tutorials/fleet-management/app-platform/app-configuration/#basic-values-merging-example
-#
+namespace:
+  # create controls whether the namespace is created by this chart.
+  create: true
+  name: agent-sandbox-system
+
 image:
-  name: "giantswarm/agent-sandbox"
-  tag: ""
-registry:
-  domain: gsoci.azurecr.io
+  # Giant Swarm-mirrored copy of registry.k8s.io/agent-sandbox/agent-sandbox-controller.
+  repository: gsoci.azurecr.io/giantswarm/agent-sandbox-controller
+  tag: v0.4.6
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+# Annotations added to the controller pod template.
+podAnnotations:
+  application.giantswarm.io/team: bumblebee
+
+controller:
+  ##### Unset flags are omitted
+  # clusterDomain: "cluster.local"
+  leaderElect: true
+  # leaderElectionNamespace: ""
+  # Install and reconcile the extension CRDs (SandboxTemplate / SandboxClaim /
+  # SandboxWarmPool). Their CRDs ship in the agent-sandbox-crds chart regardless;
+  # this only toggles the controllers for them.
+  extensions: false
+  # enableTracing: false
+  # enablePprof: false
+  # enablePprofDebug: false
+  # pprofBlockProfileRate: 1000000
+  # pprofMutexProfileFraction: 10
+  # kubeApiQps: -1.0
+  # kubeApiBurst: 10
+  # sandboxConcurrentWorkers: 1
+  ##### The following workers are only active when controller.extensions=true.
+  # sandboxClaimConcurrentWorkers: 1
+  # sandboxWarmPoolConcurrentWorkers: 1
+  # sandboxTemplateConcurrentWorkers: 1
+  ##### extraArgs passes additional flags not listed above (e.g. zap logging flags).
+  extraArgs: []
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+# Pod- and container-level securityContext. Defaults are restricted-PSS compliant
+# (required by Kyverno on Giant Swarm clusters).
+podSecurityContext:
+  runAsNonRoot: true
+  seccompProfile:
+    type: RuntimeDefault
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  runAsNonRoot: true
+  capabilities:
+    drop:
+      - ALL
+  seccompProfile:
+    type: RuntimeDefault
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
