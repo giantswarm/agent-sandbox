@@ -1,9 +1,7 @@
 ##@ Vendoring
 
 .PHONY: sync
-sync: ## Re-vendor the upstream agent-sandbox chart + CRDs (vendir), then re-apply the keep annotation to the CRDs.
+sync: ## Re-vendor the upstream agent-sandbox chart + CRDs (pinned in vendir.lock.yml).
 	vendir sync
-	@for f in helm/agent-sandbox-crds/templates/*.x-k8s.io_*.yaml; do \
-		yq -i '.metadata.annotations.["helm.sh/resource-policy"] = "keep"' "$$f"; \
-	done
-	@echo "Synced upstream charts; re-applied helm.sh/resource-policy: keep to CRDs."
+	@echo "Synced upstream chart (helm/agent-sandbox/charts) and CRDs (helm/agent-sandbox-crds/files/crds)."
+	@echo "The helm.sh/resource-policy: keep annotation is added at render time by templates/crds.yaml — no post-sync step needed."

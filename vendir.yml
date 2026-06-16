@@ -16,10 +16,11 @@ directories:
     excludePaths:
     - helm/crds/**
     newRootPath: helm
-# CRDs (Sandbox + extensions) for the agent-sandbox-crds chart. The
-# `helm.sh/resource-policy: keep` annotation is injected post-sync by `make sync`
-# (see Makefile.custom.mk) because vendir overwrites these files on every sync.
-- path: helm/agent-sandbox-crds/templates
+# CRDs (Sandbox + extensions) for the agent-sandbox-crds chart, vendored
+# PRISTINE into files/crds/. The chart's templates/crds.yaml reads them via
+# .Files.Glob and injects `helm.sh/resource-policy: keep` at render time, so
+# these files stay byte-for-byte upstream and need no post-sync mutation.
+- path: helm/agent-sandbox-crds/files/crds
   contents:
   - path: .
     git:
