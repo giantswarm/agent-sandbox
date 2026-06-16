@@ -5,6 +5,10 @@ orbs:
 workflows:
   package-and-push-chart-on-tag:
     jobs:
+    # This repository ships two charts (helm/agent-sandbox and
+    # helm/agent-sandbox-crds), so we run one push-to-app-catalog job per chart.
+    # The `chart` parameter selects helm/<chart> (overriding the chart-dir in
+    # .abs/main.yaml), same as giantswarm/muster does for muster + muster-crds.
     - architect/push-to-app-catalog:
         context: architect
         executor: app-build-suite
@@ -12,6 +16,20 @@ workflows:
         app_catalog: giantswarm-catalog
         app_catalog_test: giantswarm-test-catalog
         chart: 'agent-sandbox'
+          # Trigger job on git tag.
+        filters:
+          tags:
+            only: /^v.*/
+          branches:
+            ignore:
+            - main
+    - architect/push-to-app-catalog:
+        context: architect
+        executor: app-build-suite
+        name: package-and-push-crds-chart
+        app_catalog: giantswarm-catalog
+        app_catalog_test: giantswarm-test-catalog
+        chart: 'agent-sandbox-crds'
           # Trigger job on git tag.
         filters:
           tags:

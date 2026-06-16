@@ -1,4 +1,6 @@
 replace-chart-version-with-git: true
 generate-metadata: true
+# Default chart for local `abs` runs. CI builds both charts and overrides this
+# per job via the architect orb's `chart` parameter — see .circleci/config.yml.
 chart-dir: ./helm/agent-sandbox
 destination: ./build
