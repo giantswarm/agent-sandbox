@@ -1,0 +1,3 @@
+# The upstream chart under helm/agent-sandbox/charts/ is vendored by vendir.
+# Keep its README pristine — helm-docs must not regenerate it.
+helm/agent-sandbox/charts

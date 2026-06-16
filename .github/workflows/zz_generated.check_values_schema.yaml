@@ -1,0 +1,22 @@
+# DO NOT EDIT. Generated with:
+#
+#    devctl
+#
+#    https://github.com/giantswarm/devctl/blob/ec13639efc8514582e455f6909dc8c99daa9948f/pkg/gen/input/workflows/internal/file/check_values_schema.yaml.template
+#
+
+name: check-values-schema
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+
+permissions: {}
+
+jobs:
+  check-values-schema:
+    uses: giantswarm/github-workflows/.github/workflows/chart-values.yaml@main
+    permissions:
+      contents: read
