@@ -1,0 +1,4 @@
+# The agent-sandbox-crds chart ships only CustomResourceDefinitions and has no
+# configurable values. The CRDs are rendered as templates (so they upgrade with
+# the release) and are marked `helm.sh/resource-policy: keep` so they — and the
+# CRs that depend on them — survive `helm uninstall`.

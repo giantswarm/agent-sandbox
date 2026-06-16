@@ -1,0 +1,31 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+minimumRequiredVersion: 0.12.0
+directories:
+# Upstream agent-sandbox controller chart, vendored as a subchart of
+# helm/agent-sandbox. CRDs are excluded here — they are vendored separately into
+# the agent-sandbox-crds chart so the workload chart installs no CRDs.
+- path: helm/agent-sandbox/charts/agent-sandbox
+  contents:
+  - path: .
+    git:
+      url: https://github.com/kubernetes-sigs/agent-sandbox
+      ref: v0.4.6
+    includePaths:
+    - helm/**/*
+    excludePaths:
+    - helm/crds/**
+    newRootPath: helm
+# CRDs (Sandbox + extensions) for the agent-sandbox-crds chart, vendored
+# PRISTINE into files/crds/. The chart's templates/crds.yaml reads them via
+# .Files.Glob and injects `helm.sh/resource-policy: keep` at render time, so
+# these files stay byte-for-byte upstream and need no post-sync mutation.
+- path: helm/agent-sandbox-crds/files/crds
+  contents:
+  - path: .
+    git:
+      url: https://github.com/kubernetes-sigs/agent-sandbox
+      ref: v0.4.6
+    includePaths:
+    - helm/crds/*
+    newRootPath: helm/crds

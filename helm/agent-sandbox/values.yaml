@@ -1,12 +1,26 @@
-# This file is a Helm values file for the agent-sandbox chart.
-#
-# To learn more about how to configure your app on your cluster
-# and override the default values in here, visit:
-#
-#   https://docs.giantswarm.io/tutorials/fleet-management/app-platform/app-configuration/#basic-values-merging-example
-#
-image:
-  name: "giantswarm/agent-sandbox"
-  tag: ""
-registry:
-  domain: gsoci.azurecr.io
+# Values for the vendored upstream agent-sandbox controller chart. The upstream
+# chart is a subchart under charts/agent-sandbox (managed by vendir, pinned in
+# vendir.lock.yml). Subchart values are namespaced under its chart name.
+agent-sandbox:
+  namespace:
+    # create controls whether the namespace is created by this chart.
+    create: true
+    name: agent-sandbox-system
+  image:
+    repository: gsoci.azurecr.io/giantswarm/agent-sandbox-controller
+    tag: v0.4.6
+    pullPolicy: IfNotPresent
+  replicaCount: 1
+  controller:
+    leaderElect: true
+    # Install/reconcile the extension controllers (SandboxTemplate / SandboxClaim /
+    # SandboxWarmPool). Their CRDs ship in agent-sandbox-crds regardless.
+    extensions: false
+    extraArgs: []
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 500m
+      memory: 256Mi

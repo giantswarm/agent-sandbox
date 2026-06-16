@@ -1,0 +1,13 @@
+{{- /*
+Render the CRDs vendored (pristine) under files/crds/ by vendir, injecting
+helm.sh/resource-policy: keep into each so the CRDs — and the CRs that depend on
+them — survive `helm uninstall`. Done at render time (not as a post-sync edit) so
+the vendored files stay byte-for-byte upstream.
+*/ -}}
+{{- range $path, $_ := .Files.Glob "files/crds/*.yaml" }}
+{{- $crd := $.Files.Get $path | fromYaml }}
+{{- $meta := index $crd "metadata" }}
+{{- $_ := set $meta "annotations" (merge (dict "helm.sh/resource-policy" "keep") (default dict $meta.annotations)) }}
+---
+{{ toYaml $crd }}
+{{- end }}

@@ -1,0 +1,19 @@
+apiVersion: vendir.k14s.io/v1alpha1
+directories:
+- contents:
+  - git:
+      commitTitle: Use gvisor in openclaw example (#475)...
+      sha: d0c124d4a1fded4ed4aecb92753696b4dd8de17b
+      tags:
+      - v0.4.6
+    path: .
+  path: helm/agent-sandbox/charts/agent-sandbox
+- contents:
+  - git:
+      commitTitle: Use gvisor in openclaw example (#475)...
+      sha: d0c124d4a1fded4ed4aecb92753696b4dd8de17b
+      tags:
+      - v0.4.6
+    path: .
+  path: helm/agent-sandbox-crds/files/crds
+kind: LockConfig

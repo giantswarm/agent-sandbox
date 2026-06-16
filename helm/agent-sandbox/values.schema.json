@@ -2,24 +2,9 @@
     "$schema": "http://json-schema.org/schema#",
     "type": "object",
     "properties": {
-        "image": {
+        "agent-sandbox": {
             "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "tag": {
-                    "type": "string"
-                }
-            }
-        },
-        "registry": {
-            "type": "object",
-            "properties": {
-                "domain": {
-                    "type": "string"
-                }
-            }
+            "description": "Values forwarded verbatim to the vendored upstream agent-sandbox controller subchart (charts/agent-sandbox). Use it to configure the controller Deployment — e.g. image.repository/image.tag, replicaCount, resources, controller.* flags (leaderElect, extensions, extraArgs), and the target namespace. See the upstream chart's values.yaml for the full set of supported keys."
         }
     }
 }
