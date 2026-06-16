@@ -1,7 +1,7 @@
 # Values for the vendored upstream agent-sandbox controller chart. The upstream
 # chart is a subchart under charts/agent-sandbox (managed by vendir, pinned in
 # vendir.lock.yml). Subchart values are namespaced under its chart name.
-agent-sandbox:
+agent-sandbox: # @schema additionalProperties: true
   namespace:
     # create controls whether the namespace is created by this chart.
     create: true
