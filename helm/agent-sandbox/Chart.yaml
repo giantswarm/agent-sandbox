@@ -32,7 +32,7 @@ annotations:
   io.giantswarm.application.team: bumblebee
 dependencies:
   # Upstream kubernetes-sigs/agent-sandbox controller chart, vendored under
-  # charts/ by vendir (see vendir.yml / vendir.lock.yml; pinned to v0.4.6).
+  # charts/ by vendir (the pinned ref is tracked in vendir.lock.yml).
   # CRDs are excluded from this subchart — they ship in agent-sandbox-crds.
   - name: agent-sandbox
     repository: file://charts/agent-sandbox

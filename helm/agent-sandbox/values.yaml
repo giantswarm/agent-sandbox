@@ -7,7 +7,6 @@ agent-sandbox:
     create: true
     name: agent-sandbox-system
   image:
-    # Giant Swarm-mirrored copy of registry.k8s.io/agent-sandbox/agent-sandbox-controller.
     repository: gsoci.azurecr.io/giantswarm/agent-sandbox-controller
     tag: v0.4.6
     pullPolicy: IfNotPresent
@@ -25,25 +24,3 @@ agent-sandbox:
     limits:
       cpu: 500m
       memory: 256Mi
-
-# Restricted-PSS hardening of the controller pod. The upstream v0.4.6 chart does
-# not expose securityContext via values, so a Kyverno mutate policy injects it at
-# admission (matches the umbrella's existing kagent pattern). Disable on clusters
-# without Kyverno (and set securityContext another way).
-podSecurity:
-  enabled: true
-  # Namespace of the controller Deployment to mutate. Must match
-  # agent-sandbox.namespace.name above.
-  namespace: agent-sandbox-system
-  podSecurityContext:
-    runAsNonRoot: true
-    seccompProfile:
-      type: RuntimeDefault
-  containerSecurityContext:
-    allowPrivilegeEscalation: false
-    capabilities:
-      drop:
-        - ALL
-    runAsNonRoot: true
-    seccompProfile:
-      type: RuntimeDefault

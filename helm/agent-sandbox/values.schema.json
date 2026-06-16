@@ -4,24 +4,7 @@
     "properties": {
         "agent-sandbox": {
             "type": "object",
-            "description": "Values passed through to the vendored upstream agent-sandbox controller subchart."
-        },
-        "podSecurity": {
-            "type": "object",
-            "properties": {
-                "enabled": {
-                    "type": "boolean"
-                },
-                "namespace": {
-                    "type": "string"
-                },
-                "podSecurityContext": {
-                    "type": "object"
-                },
-                "containerSecurityContext": {
-                    "type": "object"
-                }
-            }
+            "description": "Values forwarded verbatim to the vendored upstream agent-sandbox controller subchart (charts/agent-sandbox). Use it to configure the controller Deployment — e.g. image.repository/image.tag, replicaCount, resources, controller.* flags (leaderElect, extensions, extraArgs), and the target namespace. See the upstream chart's values.yaml for the full set of supported keys."
         }
     }
 }
