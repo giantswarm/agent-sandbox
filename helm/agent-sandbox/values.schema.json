@@ -81,7 +81,7 @@
                     "additionalProperties": false
                 }
             },
-            "additionalProperties": false
+            "additionalProperties": true
         },
         "global": {
             "description": "Global values shared between all subcharts",

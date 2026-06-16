@@ -1,0 +1,13 @@
+---
+# kube-linter configuration for the agent-sandbox chart.
+#
+# The controller is the vendored upstream kubernetes-sigs/agent-sandbox subchart
+# (charts/agent-sandbox), which at v0.4.6 does not expose pod/container
+# securityContext via values. To keep this wrapper vendor-agnostic, the
+# restricted-PSS securityContext is applied at deploy time by a Kyverno mutate
+# policy in the agentic-platform umbrella, not baked into the chart. These static
+# checks are therefore handled at the platform layer; exclude them here.
+checks:
+  exclude:
+    - "no-read-only-root-fs"
+    - "run-as-non-root"
