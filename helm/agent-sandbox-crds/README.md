@@ -8,4 +8,3 @@ CustomResourceDefinitions for kubernetes-sigs/agent-sandbox (Sandbox, SandboxTem
 
 * <https://github.com/giantswarm/agent-sandbox>
 * <https://github.com/kubernetes-sigs/agent-sandbox>
-
