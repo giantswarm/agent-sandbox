@@ -1,0 +1,10 @@
+# app-test-suite configuration.
+#
+# Smoke/functional/upgrade test execution is skipped in CI for now: a real run
+# deploys the chart on a kind cluster, which pulls
+# gsoci.azurecr.io/giantswarm/agent-sandbox-controller — not yet mirrored. The
+# smoke test under tests/ats is ready; remove the matching entries from
+# skip-steps once the image is mirrored to gsoci. Same approach as giantswarm/muster.
+smoke-tests-cluster-type: kind
+upgrade-tests-cluster-type: kind
+skip-steps: [smoke,functional,upgrade]
