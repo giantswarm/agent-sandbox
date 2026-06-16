@@ -37,30 +37,11 @@ workflows:
             ignore:
             - main
 
-    # Branch: run chart tests after build-crds-chart.
-    - architect/run-tests-with-ats:
-        name: execute-crds-chart-tests
-        requires:
-        - build-crds-chart
-        filters:
-          branches:
-            ignore:
-            - main
-
-    # Tag: run chart tests after build-crds-chart.
-    - architect/run-tests-with-ats:
-        name: execute-crds-chart-tests-release
-        requires:
-        - build-crds-chart
-        filters:
-          tags:
-            only: /^v.*/
-          branches:
-            ignore: /.*/
-
-    # Tag: push the CRDs chart after tests. Mirrors push-chart-release; does NOT
-    # depend on sync-china-registry so the catalog publishes even if the Aliyun
-    # mirror is slow or fails.
+    # Tag: push the CRDs chart after it builds. Mirrors push-chart-release; does
+    # NOT depend on sync-china-registry so the catalog publishes even if the
+    # Aliyun mirror is slow or fails. No run-tests-with-ats gate: this repo has
+    # no app-test-suite tests configured yet (tracked separately); add an
+    # execute-crds-chart-tests job here once it does.
     - architect/push-to-app-catalog:
         executor: app-build-suite
         context: architect
@@ -70,7 +51,7 @@ workflows:
         chart: agent-sandbox-crds
         explicit_allow_chart_name_mismatch: true
         requires:
-        - execute-crds-chart-tests-release
+        - build-crds-chart
         filters:
           tags:
             only: /^v.*/
