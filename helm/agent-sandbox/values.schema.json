@@ -2,68 +2,26 @@
     "$schema": "http://json-schema.org/schema#",
     "type": "object",
     "properties": {
-        "namespace": {
+        "agent-sandbox": {
+            "type": "object",
+            "description": "Values passed through to the vendored upstream agent-sandbox controller subchart."
+        },
+        "podSecurity": {
             "type": "object",
             "properties": {
-                "create": {
+                "enabled": {
                     "type": "boolean"
                 },
-                "name": {
+                "namespace": {
                     "type": "string"
+                },
+                "podSecurityContext": {
+                    "type": "object"
+                },
+                "containerSecurityContext": {
+                    "type": "object"
                 }
             }
-        },
-        "image": {
-            "type": "object",
-            "properties": {
-                "repository": {
-                    "type": "string"
-                },
-                "tag": {
-                    "type": "string"
-                },
-                "pullPolicy": {
-                    "type": "string"
-                }
-            }
-        },
-        "replicaCount": {
-            "type": "integer"
-        },
-        "podAnnotations": {
-            "type": "object"
-        },
-        "controller": {
-            "type": "object",
-            "properties": {
-                "leaderElect": {
-                    "type": "boolean"
-                },
-                "extensions": {
-                    "type": "boolean"
-                },
-                "extraArgs": {
-                    "type": "array"
-                }
-            }
-        },
-        "resources": {
-            "type": "object"
-        },
-        "podSecurityContext": {
-            "type": ["object", "null"]
-        },
-        "containerSecurityContext": {
-            "type": ["object", "null"]
-        },
-        "nodeSelector": {
-            "type": "object"
-        },
-        "tolerations": {
-            "type": "array"
-        },
-        "affinity": {
-            "type": "object"
         }
     }
 }

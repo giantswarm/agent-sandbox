@@ -1,69 +1,49 @@
-namespace:
-  # create controls whether the namespace is created by this chart.
-  create: true
-  name: agent-sandbox-system
+# Values for the vendored upstream agent-sandbox controller chart. The upstream
+# chart is a subchart under charts/agent-sandbox (managed by vendir, pinned in
+# vendir.lock.yml). Subchart values are namespaced under its chart name.
+agent-sandbox:
+  namespace:
+    # create controls whether the namespace is created by this chart.
+    create: true
+    name: agent-sandbox-system
+  image:
+    # Giant Swarm-mirrored copy of registry.k8s.io/agent-sandbox/agent-sandbox-controller.
+    repository: gsoci.azurecr.io/giantswarm/agent-sandbox-controller
+    tag: v0.4.6
+    pullPolicy: IfNotPresent
+  replicaCount: 1
+  controller:
+    leaderElect: true
+    # Install/reconcile the extension controllers (SandboxTemplate / SandboxClaim /
+    # SandboxWarmPool). Their CRDs ship in agent-sandbox-crds regardless.
+    extensions: false
+    extraArgs: []
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 500m
+      memory: 256Mi
 
-image:
-  # Giant Swarm-mirrored copy of registry.k8s.io/agent-sandbox/agent-sandbox-controller.
-  repository: gsoci.azurecr.io/giantswarm/agent-sandbox-controller
-  tag: v0.4.6
-  pullPolicy: IfNotPresent
-
-replicaCount: 1
-
-# Annotations added to the controller pod template.
-podAnnotations:
-  application.giantswarm.io/team: bumblebee
-
-controller:
-  ##### Unset flags are omitted
-  # clusterDomain: "cluster.local"
-  leaderElect: true
-  # leaderElectionNamespace: ""
-  # Install and reconcile the extension CRDs (SandboxTemplate / SandboxClaim /
-  # SandboxWarmPool). Their CRDs ship in the agent-sandbox-crds chart regardless;
-  # this only toggles the controllers for them.
-  extensions: false
-  # enableTracing: false
-  # enablePprof: false
-  # enablePprofDebug: false
-  # pprofBlockProfileRate: 1000000
-  # pprofMutexProfileFraction: 10
-  # kubeApiQps: -1.0
-  # kubeApiBurst: 10
-  # sandboxConcurrentWorkers: 1
-  ##### The following workers are only active when controller.extensions=true.
-  # sandboxClaimConcurrentWorkers: 1
-  # sandboxWarmPoolConcurrentWorkers: 1
-  # sandboxTemplateConcurrentWorkers: 1
-  ##### extraArgs passes additional flags not listed above (e.g. zap logging flags).
-  extraArgs: []
-
-resources:
-  requests:
-    cpu: 50m
-    memory: 64Mi
-  limits:
-    cpu: 500m
-    memory: 256Mi
-
-# Pod- and container-level securityContext. Defaults are restricted-PSS compliant
-# (required by Kyverno on Giant Swarm clusters).
-podSecurityContext:
-  runAsNonRoot: true
-  seccompProfile:
-    type: RuntimeDefault
-containerSecurityContext:
-  allowPrivilegeEscalation: false
-  runAsNonRoot: true
-  capabilities:
-    drop:
-      - ALL
-  seccompProfile:
-    type: RuntimeDefault
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
+# Restricted-PSS hardening of the controller pod. The upstream v0.4.6 chart does
+# not expose securityContext via values, so a Kyverno mutate policy injects it at
+# admission (matches the umbrella's existing kagent pattern). Disable on clusters
+# without Kyverno (and set securityContext another way).
+podSecurity:
+  enabled: true
+  # Namespace of the controller Deployment to mutate. Must match
+  # agent-sandbox.namespace.name above.
+  namespace: agent-sandbox-system
+  podSecurityContext:
+    runAsNonRoot: true
+    seccompProfile:
+      type: RuntimeDefault
+  containerSecurityContext:
+    allowPrivilegeEscalation: false
+    capabilities:
+      drop:
+        - ALL
+    runAsNonRoot: true
+    seccompProfile:
+      type: RuntimeDefault

@@ -1,0 +1,6 @@
+dependencies:
+- name: agent-sandbox
+  repository: file://charts/agent-sandbox
+  version: 0.1.0
+digest: sha256:57e493240f29ac197f02edc63e8332b10accfcc7e9168729d02f9a32d838bb45
+generated: "2026-06-16T10:16:23.578581+02:00"

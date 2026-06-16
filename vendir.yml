@@ -1,0 +1,30 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+minimumRequiredVersion: 0.12.0
+directories:
+# Upstream agent-sandbox controller chart, vendored as a subchart of
+# helm/agent-sandbox. CRDs are excluded here — they are vendored separately into
+# the agent-sandbox-crds chart so the workload chart installs no CRDs.
+- path: helm/agent-sandbox/charts/agent-sandbox
+  contents:
+  - path: .
+    git:
+      url: https://github.com/kubernetes-sigs/agent-sandbox
+      ref: v0.4.6
+    includePaths:
+    - helm/**/*
+    excludePaths:
+    - helm/crds/**
+    newRootPath: helm
+# CRDs (Sandbox + extensions) for the agent-sandbox-crds chart. The
+# `helm.sh/resource-policy: keep` annotation is injected post-sync by `make sync`
+# (see Makefile.custom.mk) because vendir overwrites these files on every sync.
+- path: helm/agent-sandbox-crds/templates
+  contents:
+  - path: .
+    git:
+      url: https://github.com/kubernetes-sigs/agent-sandbox
+      ref: v0.4.6
+    includePaths:
+    - helm/crds/*
+    newRootPath: helm/crds
