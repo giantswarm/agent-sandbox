@@ -4,7 +4,8 @@ minimumRequiredVersion: 0.12.0
 directories:
 # Upstream agent-sandbox controller chart, vendored as a subchart of
 # helm/agent-sandbox. CRDs are excluded here — they are vendored separately into
-# the agent-sandbox-crds chart so the workload chart installs no CRDs.
+# the app chart's Helm 3 crds/ directory (see below) so the subchart installs no
+# CRDs.
 - path: helm/agent-sandbox/charts/agent-sandbox
   contents:
   - path: .
@@ -16,11 +17,13 @@ directories:
     excludePaths:
     - helm/crds/**
     newRootPath: helm
-# CRDs (Sandbox + extensions) for the agent-sandbox-crds chart, vendored
-# PRISTINE into files/crds/. The chart's templates/crds.yaml reads them via
-# .Files.Glob and injects `helm.sh/resource-policy: keep` at render time, so
-# these files stay byte-for-byte upstream and need no post-sync mutation.
-- path: helm/agent-sandbox-crds/files/crds
+# CRDs (Sandbox + extensions) vendored into the app chart's Helm 3 crds/
+# directory, so the agent-sandbox app chart owns its CRDs at the same version as
+# the controller. vendir writes them PRISTINE; `make sync` then injects
+# `helm.sh/resource-policy: keep` into each (committed), so the CRDs — and the
+# CRs that depend on them — survive `helm uninstall`. Combined with Flux
+# `crds: CreateReplace` on the HelmRelease, they upgrade atomically with the app.
+- path: helm/agent-sandbox/crds
   contents:
   - path: .
     git:

@@ -33,7 +33,7 @@ annotations:
 dependencies:
   # Upstream kubernetes-sigs/agent-sandbox controller chart, vendored under
   # charts/ by vendir (the pinned ref is tracked in vendir.lock.yml).
-  # CRDs are excluded from this subchart — they ship in agent-sandbox-crds.
+  # CRDs are excluded from this subchart — they ship in this chart's crds/ dir.
   - name: agent-sandbox
     repository: file://charts/agent-sandbox
     version: 0.1.0

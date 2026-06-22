@@ -15,5 +15,5 @@ directories:
       tags:
       - v0.4.6
     path: .
-  path: helm/agent-sandbox-crds/files/crds
+  path: helm/agent-sandbox/crds
 kind: LockConfig

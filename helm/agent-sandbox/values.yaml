@@ -14,7 +14,7 @@ agent-sandbox:  # @schema additionalProperties: true
   controller:
     leaderElect: true
     # Install/reconcile the extension controllers (SandboxTemplate / SandboxClaim /
-    # SandboxWarmPool). Their CRDs ship in agent-sandbox-crds regardless.
+    # SandboxWarmPool). Their CRDs ship in this chart's crds/ directory regardless.
     extensions: false
     extraArgs: []
   resources:
