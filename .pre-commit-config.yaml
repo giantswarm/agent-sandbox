@@ -48,26 +48,6 @@ repos:
         args:
           - helm/agent-sandbox/values.schema.json
 
-  # Helm chart hooks for agent-sandbox-crds
-  - repo: https://github.com/losisin/helm-values-schema-json
-    rev: v2.5.0
-    hooks:
-      - id: helm-schema
-        args:
-          - --config
-          - helm/agent-sandbox-crds/.schema.yaml
-  - repo: https://github.com/giantswarm/schemalint
-    rev: v2.6.1
-    hooks:
-      - id: schemalint-normalize
-        args:
-          - helm/agent-sandbox-crds/values.schema.json
-          - -o
-          - helm/agent-sandbox-crds/values.schema.json
-          - --force
-      - id: schemalint-verify
-        args:
-          - helm/agent-sandbox-crds/values.schema.json
   - repo: https://github.com/norwoodj/helm-docs
     rev: "v1.14.2"
     hooks:
