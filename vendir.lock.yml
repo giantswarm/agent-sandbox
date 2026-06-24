@@ -2,18 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: Use gvisor in openclaw example (#475)...
-      sha: d0c124d4a1fded4ed4aecb92753696b4dd8de17b
+      commitTitle: 'examples: agent-sandbox-rl: A complete python package for running
+        multi-cluster warm-pool orchestration for RL and Evals (#1000)...'
+      sha: a1a58a019a5479ec6cd77f95234927da7a1f434d
       tags:
-      - v0.4.6
+      - v0.5.0
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: Use gvisor in openclaw example (#475)...
-      sha: d0c124d4a1fded4ed4aecb92753696b4dd8de17b
+      commitTitle: 'examples: agent-sandbox-rl: A complete python package for running
+        multi-cluster warm-pool orchestration for RL and Evals (#1000)...'
+      sha: a1a58a019a5479ec6cd77f95234927da7a1f434d
       tags:
-      - v0.4.6
+      - v0.5.0
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
