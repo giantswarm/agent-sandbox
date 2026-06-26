@@ -19,16 +19,16 @@ Giant Swarm packaging of the upstream kubernetes-sigs/agent-sandbox controller, 
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| agent-sandbox.controller.extensions | bool | `false` |  |
-| agent-sandbox.controller.extraArgs | list | `[]` |  |
-| agent-sandbox.controller.leaderElect | bool | `true` |  |
-| agent-sandbox.image.pullPolicy | string | `"IfNotPresent"` |  |
-| agent-sandbox.image.repository | string | `"gsoci.azurecr.io/giantswarm/agent-sandbox-controller"` |  |
-| agent-sandbox.image.tag | string | `"v0.5.0"` |  |
 | agent-sandbox.namespace.create | bool | `true` |  |
 | agent-sandbox.namespace.name | string | `"agent-sandbox-system"` |  |
+| agent-sandbox.image.repository | string | `"gsoci.azurecr.io/giantswarm/agent-sandbox-controller"` |  |
+| agent-sandbox.image.tag | string | `"v0.5.0"` |  |
+| agent-sandbox.image.pullPolicy | string | `"IfNotPresent"` |  |
 | agent-sandbox.replicaCount | int | `1` |  |
-| agent-sandbox.resources.limits.cpu | string | `"500m"` |  |
-| agent-sandbox.resources.limits.memory | string | `"256Mi"` |  |
+| agent-sandbox.controller.leaderElect | bool | `true` |  |
+| agent-sandbox.controller.extensions | bool | `false` |  |
+| agent-sandbox.controller.extraArgs | list | `[]` |  |
 | agent-sandbox.resources.requests.cpu | string | `"50m"` |  |
 | agent-sandbox.resources.requests.memory | string | `"64Mi"` |  |
+| agent-sandbox.resources.limits.cpu | string | `"500m"` |  |
+| agent-sandbox.resources.limits.memory | string | `"256Mi"` |  |
