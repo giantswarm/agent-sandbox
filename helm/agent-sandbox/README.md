@@ -22,7 +22,7 @@ Giant Swarm packaging of the upstream kubernetes-sigs/agent-sandbox controller, 
 | agent-sandbox.namespace.create | bool | `true` |  |
 | agent-sandbox.namespace.name | string | `"agent-sandbox-system"` |  |
 | agent-sandbox.image.repository | string | `"gsoci.azurecr.io/giantswarm/agent-sandbox-controller"` |  |
-| agent-sandbox.image.tag | string | `"v0.4.6"` |  |
+| agent-sandbox.image.tag | string | `"v0.5.0"` |  |
 | agent-sandbox.image.pullPolicy | string | `"IfNotPresent"` |  |
 | agent-sandbox.replicaCount | int | `1` |  |
 | agent-sandbox.controller.leaderElect | bool | `true` |  |
