@@ -2,18 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: Use gvisor in openclaw example (#475)...
-      sha: d0c124d4a1fded4ed4aecb92753696b4dd8de17b
+      commitTitle: 'build(deps): bump the gomod-dependencies group across 1 directory
+        with 5 updates (#1105)...'
+      sha: d5d7523dd5dd1c32f1fa08d70a15d51850b41c53
       tags:
-      - v0.4.6
+      - v0.5.1
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: Use gvisor in openclaw example (#475)...
-      sha: d0c124d4a1fded4ed4aecb92753696b4dd8de17b
+      commitTitle: 'build(deps): bump the gomod-dependencies group across 1 directory
+        with 5 updates (#1105)...'
+      sha: d5d7523dd5dd1c32f1fa08d70a15d51850b41c53
       tags:
-      - v0.4.6
+      - v0.5.1
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
