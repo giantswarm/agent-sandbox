@@ -2,20 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'build(deps): bump the gomod-dependencies group across 1 directory
-        with 5 updates (#1105)...'
-      sha: d5d7523dd5dd1c32f1fa08d70a15d51850b41c53
+      commitTitle: 'test(migration): cover warm adoption from a pre-upgrade warm pool
+        (#1197)...'
+      sha: 9575043bdce1e4d9f6d485df814b583c207e9ce9
       tags:
-      - v0.5.1
+      - v0.5.2
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'build(deps): bump the gomod-dependencies group across 1 directory
-        with 5 updates (#1105)...'
-      sha: d5d7523dd5dd1c32f1fa08d70a15d51850b41c53
+      commitTitle: 'test(migration): cover warm adoption from a pre-upgrade warm pool
+        (#1197)...'
+      sha: 9575043bdce1e4d9f6d485df814b583c207e9ce9
       tags:
-      - v0.5.1
+      - v0.5.2
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
