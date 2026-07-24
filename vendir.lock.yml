@@ -2,20 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'test(migration): cover warm adoption from a pre-upgrade warm pool
-        (#1197)...'
-      sha: 9575043bdce1e4d9f6d485df814b583c207e9ce9
+      commitTitle: 'kep: update KEP-539.2 to add implementable design for the sandboxd
+        portable backend hybrid protocol (#1151)...'
+      sha: 7935857fee859bb18752ee04d8948b975e47ff20
       tags:
-      - v0.5.2
+      - v0.5.3
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'test(migration): cover warm adoption from a pre-upgrade warm pool
-        (#1197)...'
-      sha: 9575043bdce1e4d9f6d485df814b583c207e9ce9
+      commitTitle: 'kep: update KEP-539.2 to add implementable design for the sandboxd
+        portable backend hybrid protocol (#1151)...'
+      sha: 7935857fee859bb18752ee04d8948b975e47ff20
       tags:
-      - v0.5.2
+      - v0.5.3
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig

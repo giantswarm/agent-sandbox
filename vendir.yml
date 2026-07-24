@@ -11,7 +11,7 @@ directories:
   - path: .
     git:
       url: https://github.com/kubernetes-sigs/agent-sandbox
-      ref: v0.5.2
+      ref: v0.5.3
     includePaths:
     - helm/**/*
     excludePaths:
@@ -28,7 +28,7 @@ directories:
   - path: .
     git:
       url: https://github.com/kubernetes-sigs/agent-sandbox
-      ref: v0.5.2
+      ref: v0.5.3
     includePaths:
     - helm/crds/*
     newRootPath: helm/crds
