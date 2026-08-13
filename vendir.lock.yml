@@ -2,20 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'kep: update KEP-539.2 to add implementable design for the sandboxd
-        portable backend hybrid protocol (#1151)...'
-      sha: 7935857fee859bb18752ee04d8948b975e47ff20
+      commitTitle: 'bench(router): benchmarks for the three upstream-resolution paths
+        (#1246)...'
+      sha: 3ea199b8b910f8e838a6000796c29536d592fbdd
       tags:
-      - v0.5.3
+      - v0.5.5
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'kep: update KEP-539.2 to add implementable design for the sandboxd
-        portable backend hybrid protocol (#1151)...'
-      sha: 7935857fee859bb18752ee04d8948b975e47ff20
+      commitTitle: 'bench(router): benchmarks for the three upstream-resolution paths
+        (#1246)...'
+      sha: 3ea199b8b910f8e838a6000796c29536d592fbdd
       tags:
-      - v0.5.3
+      - v0.5.5
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
