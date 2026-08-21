@@ -2,20 +2,18 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'bench(router): benchmarks for the three upstream-resolution paths
-        (#1246)...'
-      sha: 3ea199b8b910f8e838a6000796c29536d592fbdd
+      commitTitle: consolidate AI review guidelines (#1401)...
+      sha: 211b7579cabed9460c1a692eb687084ff4c5879d
       tags:
-      - v0.5.5
+      - v0.5.6
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'bench(router): benchmarks for the three upstream-resolution paths
-        (#1246)...'
-      sha: 3ea199b8b910f8e838a6000796c29536d592fbdd
+      commitTitle: consolidate AI review guidelines (#1401)...
+      sha: 211b7579cabed9460c1a692eb687084ff4c5879d
       tags:
-      - v0.5.5
+      - v0.5.6
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
