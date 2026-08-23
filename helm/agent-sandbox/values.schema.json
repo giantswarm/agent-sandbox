@@ -1,12 +1,15 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
         "agent-sandbox": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
                 "controller": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "extensions": {
                             "type": "boolean"
@@ -17,11 +20,11 @@
                         "leaderElect": {
                             "type": "boolean"
                         }
-                    },
-                    "additionalProperties": false
+                    }
                 },
                 "image": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "pullPolicy": {
                             "type": "string"
@@ -32,11 +35,11 @@
                         "tag": {
                             "type": "string"
                         }
-                    },
-                    "additionalProperties": false
+                    }
                 },
                 "namespace": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "create": {
                             "type": "boolean"
@@ -44,17 +47,18 @@
                         "name": {
                             "type": "string"
                         }
-                    },
-                    "additionalProperties": false
+                    }
                 },
                 "replicaCount": {
                     "type": "integer"
                 },
                 "resources": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                         "limits": {
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "cpu": {
                                     "type": "string"
@@ -62,11 +66,11 @@
                                 "memory": {
                                     "type": "string"
                                 }
-                            },
-                            "additionalProperties": false
+                            }
                         },
                         "requests": {
                             "type": "object",
+                            "additionalProperties": false,
                             "properties": {
                                 "cpu": {
                                     "type": "string"
@@ -74,23 +78,19 @@
                                 "memory": {
                                     "type": "string"
                                 }
-                            },
-                            "additionalProperties": false
+                            }
                         }
-                    },
-                    "additionalProperties": false
+                    }
                 }
-            },
-            "additionalProperties": true
+            }
         },
         "global": {
-            "description": "Global values shared between all subcharts",
-            "$comment": "Added automatically by 'helm schema' to allow this chart to be used as a Helm dependency, as the `additionalProperties` setting would otherwise collide with Helm's special 'global' values key.",
             "type": [
                 "object",
                 "null"
-            ]
+            ],
+            "description": "Global values shared between all subcharts",
+            "$comment": "Added automatically by 'helm schema' to allow this chart to be used as a Helm dependency, as the `additionalProperties` setting would otherwise collide with Helm's special 'global' values key."
         }
-    },
-    "additionalProperties": false
+    }
 }
