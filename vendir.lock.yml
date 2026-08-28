@@ -2,18 +2,18 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: consolidate AI review guidelines (#1401)...
-      sha: 211b7579cabed9460c1a692eb687084ff4c5879d
+      commitTitle: 'test-unit: run Go unit tests in nested modules (#1469)...'
+      sha: bb72f49d79f009a960eed2ae6c32e1cc082399c5
       tags:
-      - v0.5.6
+      - v1.0.0
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: consolidate AI review guidelines (#1401)...
-      sha: 211b7579cabed9460c1a692eb687084ff4c5879d
+      commitTitle: 'test-unit: run Go unit tests in nested modules (#1469)...'
+      sha: bb72f49d79f009a960eed2ae6c32e1cc082399c5
       tags:
-      - v0.5.6
+      - v1.0.0
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
