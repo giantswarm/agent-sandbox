@@ -2,18 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'test-unit: run Go unit tests in nested modules (#1469)...'
-      sha: bb72f49d79f009a960eed2ae6c32e1cc082399c5
+      commitTitle: 'fix(python-sdk): use synchronous client for atexit sandbox cleanup
+        (#1512)...'
+      sha: 3e77ccbac4db8a12b0157eafcad0d1ad5872f32a
       tags:
-      - v1.0.0
+      - v1.0.1
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'test-unit: run Go unit tests in nested modules (#1469)...'
-      sha: bb72f49d79f009a960eed2ae6c32e1cc082399c5
+      commitTitle: 'fix(python-sdk): use synchronous client for atexit sandbox cleanup
+        (#1512)...'
+      sha: 3e77ccbac4db8a12b0157eafcad0d1ad5872f32a
       tags:
-      - v1.0.0
+      - v1.0.1
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
