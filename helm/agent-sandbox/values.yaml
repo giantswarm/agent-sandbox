@@ -8,7 +8,7 @@ agent-sandbox:  # @schema additionalProperties: true
     name: agent-sandbox-system
   image:
     repository: gsoci.azurecr.io/giantswarm/agent-sandbox-controller
-    tag: v1.0.0
+    tag: v1.0.1
     pullPolicy: IfNotPresent
   replicaCount: 1
   controller:
