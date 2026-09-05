@@ -1,10 +1,12 @@
-# app-test-suite configuration.
+# app-test-suite (ATS >= 1.0) config, consumed by the generated
+# `run-tests-with-ats` CircleCI job (execute-chart-tests). The job creates the
+# kind cluster and hands ATS its kubeconfig; helm and kubectl come with the
+# ATS image.
 #
-# Smoke/functional/upgrade test execution is skipped in CI for now: a real run
-# deploys the chart on a kind cluster, which pulls
-# gsoci.azurecr.io/giantswarm/agent-sandbox-controller — not yet mirrored. The
-# smoke test under tests/ats is ready; remove the matching entries from
-# skip-steps once the image is mirrored to gsoci. Same approach as giantswarm/muster.
-# @TODO: enable ATS tests by removing the matching entries from skip-steps once
-# gsoci.azurecr.io/giantswarm/agent-sandbox-controller is mirrored to gsoci.
-skip-steps: [smoke,functional,upgrade]
+# Smoke: ATS installs the packaged chart with `helm upgrade --install --wait`
+# (the chart's crds/ go on with it, the controller image is the gsoci mirror
+# gsoci.azurecr.io/giantswarm/agent-sandbox-controller) and tests/ats asserts
+# that the controller Deployment is ready in agent-sandbox-system.
+#
+# functional and upgrade stay skipped: there is no second scenario yet.
+skip-steps: [functional,upgrade]
