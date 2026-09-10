@@ -2,20 +2,18 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'fix(python-sdk): use synchronous client for atexit sandbox cleanup
-        (#1512)...'
-      sha: 3e77ccbac4db8a12b0157eafcad0d1ad5872f32a
+      commitTitle: 'feat(mcp): add /healthz and /readyz probe endpoints (#1339)...'
+      sha: 9a85153590e54cb980f3241f9e7a9228449412c9
       tags:
-      - v1.0.1
+      - v1.0.2
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'fix(python-sdk): use synchronous client for atexit sandbox cleanup
-        (#1512)...'
-      sha: 3e77ccbac4db8a12b0157eafcad0d1ad5872f32a
+      commitTitle: 'feat(mcp): add /healthz and /readyz probe endpoints (#1339)...'
+      sha: 9a85153590e54cb980f3241f9e7a9228449412c9
       tags:
-      - v1.0.1
+      - v1.0.2
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
