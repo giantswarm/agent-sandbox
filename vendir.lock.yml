@@ -2,18 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'feat(mcp): add /healthz and /readyz probe endpoints (#1339)...'
-      sha: 9a85153590e54cb980f3241f9e7a9228449412c9
+      commitTitle: 'examples(openclaw-fleet-gke): per-employee config injection and
+        dynamic storage resize (#1656)...'
+      sha: 527d9346fe1d237dea5c003f3c720531c7bab1df
       tags:
-      - v1.0.2
+      - v1.0.3
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'feat(mcp): add /healthz and /readyz probe endpoints (#1339)...'
-      sha: 9a85153590e54cb980f3241f9e7a9228449412c9
+      commitTitle: 'examples(openclaw-fleet-gke): per-employee config injection and
+        dynamic storage resize (#1656)...'
+      sha: 527d9346fe1d237dea5c003f3c720531c7bab1df
       tags:
-      - v1.0.2
+      - v1.0.3
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
