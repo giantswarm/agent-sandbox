@@ -2,20 +2,18 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'examples(openclaw-fleet-gke): per-employee config injection and
-        dynamic storage resize (#1656)...'
-      sha: 527d9346fe1d237dea5c003f3c720531c7bab1df
+      commitTitle: 'fix(python): preserve spaces in sandbox file paths (#1719)...'
+      sha: 810726d89c71da77cdc82668bca1b00f5cd21ed8
       tags:
-      - v1.0.3
+      - v1.0.4
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'examples(openclaw-fleet-gke): per-employee config injection and
-        dynamic storage resize (#1656)...'
-      sha: 527d9346fe1d237dea5c003f3c720531c7bab1df
+      commitTitle: 'fix(python): preserve spaces in sandbox file paths (#1719)...'
+      sha: 810726d89c71da77cdc82668bca1b00f5cd21ed8
       tags:
-      - v1.0.3
+      - v1.0.4
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
