@@ -2,18 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'fix(python): preserve spaces in sandbox file paths (#1719)...'
-      sha: 810726d89c71da77cdc82668bca1b00f5cd21ed8
+      commitTitle: 'fix(agent-sandbox-rl): put run id on pods under a non-reserved
+        label key (#1811)...'
+      sha: 82d410efd5a279e887cdcf8c01e742a345fef63d
       tags:
-      - v1.0.4
+      - v1.0.5
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'fix(python): preserve spaces in sandbox file paths (#1719)...'
-      sha: 810726d89c71da77cdc82668bca1b00f5cd21ed8
+      commitTitle: 'fix(agent-sandbox-rl): put run id on pods under a non-reserved
+        label key (#1811)...'
+      sha: 82d410efd5a279e887cdcf8c01e742a345fef63d
       tags:
-      - v1.0.4
+      - v1.0.5
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
