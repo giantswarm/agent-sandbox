@@ -36,4 +36,4 @@ dependencies:
   # CRDs are excluded from this subchart — they ship in this chart's crds/ dir.
   - name: agent-sandbox
     repository: file://charts/agent-sandbox
-    version: 0.1.0
+    version: 0.1.1

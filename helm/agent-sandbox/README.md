@@ -13,7 +13,7 @@ Giant Swarm packaging of the upstream kubernetes-sigs/agent-sandbox controller, 
 
 | Repository | Name | Version |
 |------------|------|---------|
-| file://charts/agent-sandbox | agent-sandbox | 0.1.0 |
+| file://charts/agent-sandbox | agent-sandbox | 0.1.1 |
 
 ## Values
 

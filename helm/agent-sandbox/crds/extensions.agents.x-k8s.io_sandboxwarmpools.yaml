@@ -4,6 +4,7 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.21.0
+    helm.sh/resource-policy: keep
   name: sandboxwarmpools.extensions.agents.x-k8s.io
 spec:
   group: extensions.agents.x-k8s.io
@@ -23,6 +24,10 @@ spec:
     - jsonPath: .spec.replicas
       name: Desired
       type: integer
+    - jsonPath: .spec.sandboxTemplateRef.name
+      name: Template
+      priority: 1
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
