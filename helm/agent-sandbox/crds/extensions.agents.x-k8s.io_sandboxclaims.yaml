@@ -4,7 +4,6 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.21.0
-    helm.sh/resource-policy: keep
   name: sandboxclaims.extensions.agents.x-k8s.io
 spec:
   group: extensions.agents.x-k8s.io
