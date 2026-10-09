@@ -2,20 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'fix(agent-sandbox-rl): put run id on pods under a non-reserved
-        label key (#1811)...'
-      sha: 82d410efd5a279e887cdcf8c01e742a345fef63d
+      commitTitle: 'multi-cluster-fleet: add multi-cluster warm-pool planner, part
+        1/4 (#1394)...'
+      sha: cd0761d5001baaf293460cd382ee318744d6b249
       tags:
-      - v1.0.5
+      - v1.0.6
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'fix(agent-sandbox-rl): put run id on pods under a non-reserved
-        label key (#1811)...'
-      sha: 82d410efd5a279e887cdcf8c01e742a345fef63d
+      commitTitle: 'multi-cluster-fleet: add multi-cluster warm-pool planner, part
+        1/4 (#1394)...'
+      sha: cd0761d5001baaf293460cd382ee318744d6b249
       tags:
-      - v1.0.5
+      - v1.0.6
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
