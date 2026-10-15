@@ -2,20 +2,18 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'multi-cluster-fleet: add multi-cluster warm-pool planner, part
-        1/4 (#1394)...'
-      sha: cd0761d5001baaf293460cd382ee318744d6b249
+      commitTitle: 'docs(vscode-sandbox): stop recommending ModHeader (#1936)...'
+      sha: 807cc37107bd7c012115afac9fa9c3b77b8365c2
       tags:
-      - v1.0.6
+      - v1.0.7
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'multi-cluster-fleet: add multi-cluster warm-pool planner, part
-        1/4 (#1394)...'
-      sha: cd0761d5001baaf293460cd382ee318744d6b249
+      commitTitle: 'docs(vscode-sandbox): stop recommending ModHeader (#1936)...'
+      sha: 807cc37107bd7c012115afac9fa9c3b77b8365c2
       tags:
-      - v1.0.6
+      - v1.0.7
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
