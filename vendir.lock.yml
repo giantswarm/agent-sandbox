@@ -2,18 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'docs(vscode-sandbox): stop recommending ModHeader (#1936)...'
-      sha: 807cc37107bd7c012115afac9fa9c3b77b8365c2
+      commitTitle: 'build(deps): bump the gomod-dependencies group across 2 directories
+        with 14 updates (#1937)...'
+      sha: a502928b6eff4a17013d24e9c5481d79e99bcdd5
       tags:
-      - v1.0.7
+      - v1.0.8
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'docs(vscode-sandbox): stop recommending ModHeader (#1936)...'
-      sha: 807cc37107bd7c012115afac9fa9c3b77b8365c2
+      commitTitle: 'build(deps): bump the gomod-dependencies group across 2 directories
+        with 14 updates (#1937)...'
+      sha: a502928b6eff4a17013d24e9c5481d79e99bcdd5
       tags:
-      - v1.0.7
+      - v1.0.8
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
