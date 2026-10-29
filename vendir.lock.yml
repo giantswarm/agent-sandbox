@@ -2,20 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'build(deps): bump the gomod-dependencies group across 2 directories
-        with 14 updates (#1937)...'
-      sha: a502928b6eff4a17013d24e9c5481d79e99bcdd5
+      commitTitle: 'test(claim): drop four shutdown policy E2Es covered by unit tests
+        (#1953)...'
+      sha: b1277676f8bf0e82ea299928997ecf5d696a92f1
       tags:
-      - v1.0.8
+      - v1.0.9
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'build(deps): bump the gomod-dependencies group across 2 directories
-        with 14 updates (#1937)...'
-      sha: a502928b6eff4a17013d24e9c5481d79e99bcdd5
+      commitTitle: 'test(claim): drop four shutdown policy E2Es covered by unit tests
+        (#1953)...'
+      sha: b1277676f8bf0e82ea299928997ecf5d696a92f1
       tags:
-      - v1.0.8
+      - v1.0.9
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
