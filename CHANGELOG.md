@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- changed: the chart README no longer prints the controller image tag. `agent-sandbox.image.tag` carries a helm-docs `@default`, so a Renovate tag bump no longer changes the README and fails `pre-commit`.
 - changed: the `agent-sandbox` app chart now owns its CRDs (Sandbox + extensions) in its Helm 3 `crds/` directory with `helm.sh/resource-policy: keep` baked in, so they travel with the app at the same version. Combined with Flux `crds: CreateReplace` on the HelmRelease, CRDs upgrade atomically on every release.
 - removed: the standalone `agent-sandbox-crds` chart and its CI publishing jobs. CRD delivery moved into the app chart (above); there is no external standalone consumer.
 - changed: `app.giantswarm.io` label group was changed to `application.giantswarm.io`

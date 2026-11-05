@@ -33,7 +33,8 @@
                             "type": "string"
                         },
                         "tag": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "The controller image tag."
                         }
                     }
                 },
