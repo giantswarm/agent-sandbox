@@ -2,20 +2,20 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'build(deps): bump the gomod-dependencies group across 2 directories
-        with 14 updates (#1937)...'
-      sha: a502928b6eff4a17013d24e9c5481d79e99bcdd5
+      commitTitle: 'ci: record managed instance group errors when kops validation
+        fails (#2249)...'
+      sha: 890de53a4dd18e35313173e6dc34d9559b1a9733
       tags:
-      - v1.0.8
+      - v1.0.11
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'build(deps): bump the gomod-dependencies group across 2 directories
-        with 14 updates (#1937)...'
-      sha: a502928b6eff4a17013d24e9c5481d79e99bcdd5
+      commitTitle: 'ci: record managed instance group errors when kops validation
+        fails (#2249)...'
+      sha: 890de53a4dd18e35313173e6dc34d9559b1a9733
       tags:
-      - v1.0.8
+      - v1.0.11
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
