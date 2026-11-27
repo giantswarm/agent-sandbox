@@ -2,20 +2,18 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'build(deps): bump the gomod-dependencies group across 2 directories
-        with 14 updates (#1937)...'
-      sha: a502928b6eff4a17013d24e9c5481d79e99bcdd5
+      commitTitle: 'feat(python-sdk): add files.stat (#2332)...'
+      sha: 4863a629bd6ea0c53a70c1712c46058f4b46f81b
       tags:
-      - v1.0.8
+      - v1.0.12
     path: .
   path: helm/agent-sandbox/charts/agent-sandbox
 - contents:
   - git:
-      commitTitle: 'build(deps): bump the gomod-dependencies group across 2 directories
-        with 14 updates (#1937)...'
-      sha: a502928b6eff4a17013d24e9c5481d79e99bcdd5
+      commitTitle: 'feat(python-sdk): add files.stat (#2332)...'
+      sha: 4863a629bd6ea0c53a70c1712c46058f4b46f81b
       tags:
-      - v1.0.8
+      - v1.0.12
     path: .
   path: helm/agent-sandbox/crds
 kind: LockConfig
